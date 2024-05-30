@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+    <title>Login & Registration</title>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
+    <div class="form-box">
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+            <div class="input-box">
+                <input type="text" id="login-username" class="input-field" placeholder="Username or Email">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="login-password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Sign In" onclick="loginUser()">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <div class="input-box">
+                <input type="text" id="register-username" class="input-field" placeholder="Username">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="register-email" class="input-field" placeholder="Email">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="register-password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register" onclick="registerUser()">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+
+<script>
+    function login() {
+        document.getElementById("login").style.left = "4px";
+        document.getElementById("register").style.right = "-520px";
+        document.getElementById("loginBtn").classList.add("white-btn");
+        document.getElementById("registerBtn").classList.remove("white-btn");
+        document.getElementById("login").style.opacity = 1;
+        document.getElementById("register").style.opacity = 0;
+    }
+
+    function register() {
+        document.getElementById("login").style.left = "-510px";
+        document.getElementById("register").style.right = "5px";
+        document.getElementById("loginBtn").classList.remove("white-btn");
+        document.getElementById("registerBtn").classList.add("white-btn");
+        document.getElementById("login").style.opacity = 0;
+        document.getElementById("register").style.opacity = 1;
+    }
+
+    async function loginUser() {
+        const username = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
+        
+        if (!username || !password) {
+            alert("Please fill out all fields.");
+            return;
+        }
+        
+        const response = await fetch('http://localhost:3007/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+        });
+        
+        const data = await response.json();
+        alert(data.message);
+        
+        // Clear the form fields
+        if (response.status === 200) {
+            document.getElementById("login-username").value = '';
+            document.getElementById("login-password").value = '';
+            document.getElementById("login-check").checked = false;
+        }
+    }
+
+    async function registerUser() {
+        const username = document.getElementById("register-username").value;
+        const email = document.getElementById("register-email").value;
+        const password = document.getElementById("register-password").value;
+        
+        if (!username || !email || !password) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        const response = await fetch('http://localhost:3007/api/update', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, email, password })
+        });
+        
+        const data = await response.json();
+        alert(data.message);
+        
+        // Clear the form fields
+        if (response.status === 201) {
+            document.getElementById("register-username").value = '';
+            document.getElementById("register-email").value = '';
+            document.getElementById("register-password").value = '';
+            document.getElementById("register-check").checked = false;
+        }
+    }
+</script>
+
+</body>
+</html>

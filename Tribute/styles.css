@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.logo {
+  width: 80px;
+  height: 70px;
+}
+#navItem {
+  color: #fff;
+  font-family: "Roboto";
+}
+.banner-section-bg-container {
+  background-image: url("https://theknowledgereview.com/wp-content/uploads/2022/11/The-Odyssey-of-an-Inspiring-Leader-Ratan-Tata.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+.about-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.about-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.about-card {
+  text-align: center;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e5eaf4;
+  border-radius: 16px;
+}
+.about-card-image {
+  width: 87px;
+  height: 90px;
+}
+.about-card-title {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 22px;
+  font-weight: 500;
+}
+.about-card-description {
+  color: #7b8794;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.explore-tata-section {
+  background-color: white;
+}
+.tata-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.tata-item-image {
+  border-radius: 16px;
+  height:20vh;
+}
+.tata-card-title {
+  color: #323f4b;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+.tata-item-link {
+  color: #d0b200;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+}
+.tata-item-card {
+  border-radius: 16px ;
+  height:90%;
+ 
+}
+.awards-section {
+  background-color: #f9fbfe;
+}
+.awards-section-img {
+  width: 270px;
+}
+.awards-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.awards-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.quotes-section {
+  background-color: white;
+}
+.quotes-section-img {
+  
+  height:40vh;
+}
+.quotes-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.quotes-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.thanking-section {
+  background-color: #d0b2001a;
+}
+.thanking-section-heading {
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.thanking-section-description {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+.thanking-section-img {
+  width: 270px;
+  margin-bottom: 20px;
+}
+.award-section {
+  background-color: white;
+}
+
+.footer-section {
+  background-color: #0d2436;
+}
+
+.footer-section-note{
+  color: #959ead;
+  font-family: "Roboto";
+  font-size: 14px;
+}
